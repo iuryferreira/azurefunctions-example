@@ -18,7 +18,7 @@ jobs:
         run:  dotnet test --nologo
 
       - name: Generate Release
-        run: dotnet publish  --project src/AzureFunctionsExample.Function --configuration Release --output ./out
+        run: dotnet publish src/AzureFunctionsExample.Function --configuration Release --output ./out
 
       - name: "Login via Azure CLI"
         uses: azure/login@v1
