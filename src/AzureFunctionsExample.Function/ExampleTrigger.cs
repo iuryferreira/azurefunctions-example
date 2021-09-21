@@ -12,7 +12,6 @@ namespace AzureFunctionsExample.Function
         [Function("ExampleTrigger")]
         public static HttpResponseData Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestData req,
-            [CosmosDB(databaseName: "my-database", collectionName: "my-container", ConnectionStringSetting = "CosmosDB")] IAsyncCollector<dynamic> documents,
             FunctionContext executionContext)
         {
             var logger = executionContext.GetLogger("ExampleTrigger");
